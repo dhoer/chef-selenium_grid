@@ -29,12 +29,6 @@ Supports
 - Ubuntu
 - Windows
 
-### Cookbooks
-
-- windows
-- nssm - Required by Windows services only (e.g. Hub and HtmlUnit running in background)
-- macosx_autologin - Required by Mac OS X GUI services 
-
 ## Recipes
 
 ## hub
