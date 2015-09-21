@@ -14,6 +14,7 @@ Supports
 - Firefox
 - HtmlUnit
 - Internet Explorer
+- PhantomJS
 - Safari
 
 ## Requirements
@@ -62,6 +63,8 @@ Installs and configures a Selenium Node as service on Linux and a GUI service on
 - `node['selenium_grid']['ie']['max_instances']` - Installs IEDriver and configures IE, if > 0. Only one instance
 of IE is recommended. Windows only. Default `0`.
 - `node['selenium_grid']['ie']['version']` - Version of browser installed, if nil. Default `nil`.
+- `node['selenium_grid']['phantomjs']['max_instances']` - Creates a separate Node service for each instance, 
+if > 0. Linux only. Default `0`.
 - `node['selenium_grid']['safari']['max_instances']` - Installs SafariDriver, if > 0. Mac OS X only. Default `0`.
 - `node['selenium_grid']['safari']['version']` - Version of browser installed, if nil. Default `nil`.
     
