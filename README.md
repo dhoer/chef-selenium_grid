@@ -41,13 +41,6 @@ Installs and configures a Selenium Node as service on Linux and a GUI service on
 
 ### Attributes
 
-- `node['selenium_grid']['username']` - Mac OS X and Windows. Default `nil`.
-- `node['selenium_grid']['password']` - Mac OS X and Windows. Default `nil`.
-- `node['selenium_grid']['domain']` - Windows only. Default `nil`.
-- `node['selenium_grid']['display']['width']` - Screen resolution width. Linux and Windows only. Default `1024`.
-- `node['selenium_grid']['display']['height']` - Screen resolution height. Linux and Window only. Default `768`.
-- `node['selenium_grid']['display']['depth']` - Screen resolution depth. Linux only. Default `24`.
-- `node['selenium_grid']['display']['windows']` - Set Windows screen resolution. Windows only. Default `true`.
 - `node['selenium_grid']['chrome']['max_instances']` - Installs Chrome and ChromeDriver, if > 0. Default `0`.
 - `node['selenium_grid']['chrome']['version']` - Version of browser installed, if nil. Default `nil`.
 - `node['selenium_grid']['firefox']['max_instances']` - Installs Firefox, if > 0. Default `0`.
@@ -61,6 +54,19 @@ of IE is recommended. Windows only. Default `0`.
 if > 0. Linux only. Default `0`.
 - `node['selenium_grid']['safari']['max_instances']` - Installs SafariDriver, if > 0. Mac OS X only. Default `0`.
 - `node['selenium_grid']['safari']['version']` - Version of browser installed, if nil. Default `nil`.
+
+##### Account
+
+- `node['selenium_grid']['username']` - Mac OS X and Windows. Default `nil`.
+- `node['selenium_grid']['password']` - Mac OS X and Windows. Default `nil`.
+- `node['selenium_grid']['domain']` - Windows only. Default `nil`.
+
+##### Display
+
+- `node['selenium_grid']['display']['width']` - Screen resolution width. Linux and Windows only. Default `1024`.
+- `node['selenium_grid']['display']['height']` - Screen resolution height. Linux and Window only. Default `768`.
+- `node['selenium_grid']['display']['depth']` - Screen resolution depth. Linux only. Default `24`.
+- `node['selenium_grid']['display']['windows']` - Set Windows screen resolution. Windows only. Default `true`.
     
 ### Examples
 
