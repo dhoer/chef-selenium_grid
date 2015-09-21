@@ -63,10 +63,10 @@ if > 0. Linux only. Default `0`.
 
 ##### Display
 
-- `node['selenium_grid']['display']['width']` - Screen resolution width. Linux and Windows only. Default `1024`.
-- `node['selenium_grid']['display']['height']` - Screen resolution height. Linux and Window only. Default `768`.
-- `node['selenium_grid']['display']['depth']` - Screen resolution depth. Linux only. Default `24`.
-- `node['selenium_grid']['display']['windows']` - Set Windows screen resolution. Windows only. Default `true`.
+- `node['selenium_grid']['display']['width']` - Linux and Windows only. Default `1024`.
+- `node['selenium_grid']['display']['height']` - Linux and Window only. Default `768`.
+- `node['selenium_grid']['display']['depth']` - Linux only. Default `24`.
+- `node['selenium_grid']['display']['windows']` - Windows only. Default `true`.
     
 ### Examples
 
