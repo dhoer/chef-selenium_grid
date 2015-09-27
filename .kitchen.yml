@@ -47,9 +47,10 @@ suites:
           max_instances: 5
         htmlunit:
           max_instances: 1
-          version: 2.18
         ie:
           max_instances: 1
+        opera:
+          max_instances: 5
         phantomjs:
           max_instances: 5
         safari:

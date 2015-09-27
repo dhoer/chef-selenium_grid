@@ -5,6 +5,16 @@ domain = platform?('windows') ? node['selenium_grid']['domain'] : nil
 width = node['selenium_grid']['display']['width']
 height = node['selenium_grid']['display']['height']
 
+case node['platform_family']
+when 'debian'
+  # firefox runs at compile time and firefox package is not up to date on Ubuntu 14.04-1
+  execute 'sudo apt-get update' do
+    action :nothing
+  end.run_action(:run)
+when 'rhel'
+  include_recipe 'yum'
+end
+
 unless platform?('windows', 'mac_os_x')
   node.override['xvfb']['dimensions'] = "#{width}x#{height}x#{node['selenium_grid']['display']['depth']}"
 
@@ -59,6 +69,18 @@ if node['selenium_grid']['ie']['max_instances'] > 0 && platform?('windows')
   }
 end
 
+if node['selenium_grid']['opera']['max_instances'] > 0 && platform?('ubuntu', 'windows')
+  include_recipe 'opera'
+  include_recipe 'operadriver'
+  v_opera = node['selenium_grid']['opera']['version']
+  capabilities << {
+    browserName: 'operablink',
+    maxInstances: node['selenium_grid']['opera']['max_instances'],
+    version: v_opera ? v_opera : opera_version,
+    seleniumProtocol: 'WebDriver'
+  }
+end
+
 if node['selenium_grid']['phantomjs']['max_instances'] > 0 && !platform?('mac_os_x', 'windows')
   node['selenium_grid']['phantomjs']['max_instances'].times do |i|
     ghostdriver "ghostdriver_node_#{i}" do
@@ -84,12 +106,14 @@ if node['selenium_grid']['safari']['max_instances'] > 0 && platform?('mac_os_x')
   }
 end
 
-node.set['selenium']['node']['capabilities'] = capabilities
-node.set['selenium']['node']['username'] = username
-node.set['selenium']['node']['password'] = password
-node.set['selenium']['node']['domain'] = domain
+unless capabilities.empty?
+  node.set['selenium']['node']['capabilities'] = capabilities
+  node.set['selenium']['node']['username'] = username
+  node.set['selenium']['node']['password'] = password
+  node.set['selenium']['node']['domain'] = domain
 
-include_recipe 'selenium::node'
+  include_recipe 'selenium::node'
+end
 
 # Call windows_display after selenium_node because windows_display will
 # override auto-login created by selenium_node.

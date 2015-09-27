@@ -50,6 +50,9 @@ Installs and configures a Selenium Node as service on Linux and a GUI service on
 - `node['selenium_grid']['ie']['max_instances']` - Installs IEDriver and configures IE, if > 0. Only one instance
 of IE is recommended. Windows only. Default `0`.
 - `node['selenium_grid']['ie']['version']` - Version of browser installed, if nil. Default `nil`.
+- `node['selenium_grid']['opera']['max_instances']` - Installs Opera and OperaChromiumDriver, if > 0. Ubuntu 
+and Windows only. Default `0`.
+- `node['selenium_grid']['opera']['version']` - Version of browser installed, if nil. Default `nil`.
 - `node['selenium_grid']['phantomjs']['max_instances']` - Creates a separate Node service for each instance, 
 if > 0. Linux only. Default `0`.
 - `node['selenium_grid']['safari']['max_instances']` - Installs SafariDriver, if > 0. Mac OS X only. Default `0`.
@@ -70,13 +73,24 @@ if > 0. Linux only. Default `0`.
     
 ### Examples
 
-#### Selenium Node with Chrome and Firefox capabilities
+#### Role to create Selenium Node with Chrome and Firefox capabilities
 
 ```ruby
-node.set['selenium_grid']['chrome']['max_instances'] = 5
-node.set['selenium_grid']['firefox']['max_instances'] = 5
-  
-include_recipe 'selenium::node'
+name "selenium_node"
+description "Install Selenium Node with Chrome and Firefox capabilities"
+default_attributes(
+  "selenium_grid": {
+    "chrome": {
+      "max_instances": 5
+    },
+    "firefox": {
+      "max_instances": 5
+    } 
+  }
+)
+run_list(
+  "recipe[selenium_grid::node]"
+)
 ```
 
 #### Selenium Node with IE capability and custom version

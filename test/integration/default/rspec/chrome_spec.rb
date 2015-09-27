@@ -11,7 +11,7 @@ unless RbConfig::CONFIG['host_os'] =~ /linux/ && `cat /etc/*-release` =~ /CentOS
       @selenium.quit
     end
 
-    if MAC || WINDOWS
+    if MACOSX
       res = '1024 x 768'
     else
       res = '1280 x 1024' # xvfb
