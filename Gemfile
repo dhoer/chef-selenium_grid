@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'foodcritic', '~> 5.0'
 gem 'rubocop', '~> 0.31'

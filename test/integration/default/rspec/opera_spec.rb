@@ -1,7 +1,7 @@
 require 'rspec_helper'
 require 'rbconfig'
 
-if WINDOWS || RbConfig::CONFIG['host_os'] =~ /linux/ && `gcc --version` =~ /Ubuntu/
+if WINDOWS || (LINUX && `gcc --version` =~ /Ubuntu/)
   describe 'Opera Grid' do
     before(:all) do
       caps = Selenium::WebDriver::Remote::Capabilities.chrome

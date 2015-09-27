@@ -1,6 +1,6 @@
 require 'rspec_helper'
 
-describe 'PhantomJS Grid', unless: MAC || WINDOWS do
+describe 'PhantomJS Grid', unless: MACOSX || WINDOWS do
   before(:all) do
     @selenium = Selenium::WebDriver.for(:remote, url: 'http://localhost:8911')
     @selenium.manage.window.size = Selenium::WebDriver::Dimension.new(1280, 1024)
