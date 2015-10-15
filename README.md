@@ -120,7 +120,7 @@ minor_version = v[1]
 node.set['selenium_grid']['ie']['max_instances'] = 1
 node.set['selenium_grid']['ie']['version'] = "#{major_version}.#{minor_version}"
   
-include_recipe 'selenium::node'
+include_recipe 'selenium_grid::node'
 ```
 
 ## Getting Help
