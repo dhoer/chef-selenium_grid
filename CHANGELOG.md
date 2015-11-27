@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1
+
+- Replace firefox with mozilla_firefox cookbook
+
 ## 1.2.0 
 
 - Support Opera

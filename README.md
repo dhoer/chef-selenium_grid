@@ -6,9 +6,12 @@
 [supermarket]: https://supermarket.chef.io/cookbooks/selenium_grid
 [travis]: https://travis-ci.org/dhoer/chef-selenium_grid
 
-Wraps selenium, browsers, drivers, and screenresolution cookbooks into one comprehensive cookbook.
+Setup a selenium grid in minutes.  
+Create selenium hub, then add selenium nodes on Linux, Mac OS X and/or Windows platforms.  
+Set max instances greater than zero to install and/or configure Browsers and JavaScript engines.  
+Browsers and JavaScript engines will be ignored on operating systems that are not compatible. 
 
-Supports
+Supported Browser and JavaScript engines:
 
 - Chrome
 - Firefox
@@ -52,7 +55,7 @@ attributes (if any) for more information about configuring them as well.
 [ChromeDriver](https://github.com/dhoer/chef-chromedriver#attributes), if > 0. Default `0`.
 - `node['selenium_grid']['chrome']['version']` - Version of browser installed, if nil. Default `nil`.
 - `node['selenium_grid']['firefox']['max_instances']` - Installs 
-[Firefox](https://github.com/tas50/Firefox#attributes), if > 0. Default `0`.
+[MozillaFirefox](https://github.com/dhoer/chef-mozilla_firefox#attributes), if > 0. Default `0`.
 - `node['selenium_grid']['firefox']['version']` - Version of browser installed, if nil. Default `nil`.
 - `node['selenium_grid']['htmlunit']['max_instances']` - Activates HtmlUnit, if > 0. Default `0`.
 - `node['selenium_grid']['htmlunit']['version']` - Default `nil`.

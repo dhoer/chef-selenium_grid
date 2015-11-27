@@ -28,7 +28,7 @@ if node['selenium_grid']['chrome']['max_instances'] > 0 && !(platform_family?('r
   node['platform_version'].split('.')[0] == '6')
   include_recipe 'chrome'
   include_recipe 'chromedriver'
-  v_chrome = node['selenium_grid']['firefox']['version']
+  v_chrome = node['selenium_grid']['chrome']['version']
   capabilities << {
     browserName: 'chrome',
     maxInstances: node['selenium_grid']['chrome']['max_instances'],
@@ -38,7 +38,8 @@ if node['selenium_grid']['chrome']['max_instances'] > 0 && !(platform_family?('r
 end
 
 if node['selenium_grid']['firefox']['max_instances'] > 0 && !platform?('debian')
-  include_recipe 'firefox'
+  node.set['mozilla_firefox']['32bit_only'] = true
+  include_recipe 'mozilla_firefox'
   v_firefox = node['selenium_grid']['firefox']['version']
   capabilities << {
     browserName: 'firefox',
