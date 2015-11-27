@@ -4,7 +4,7 @@ maintainer_email 'dennis.hoer@gmail.com'
 license 'MIT'
 description 'Installs/Configures Selenium-Grid'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '1.2.0'
+version '1.2.1'
 
 supports 'centos'
 supports 'redhat'
