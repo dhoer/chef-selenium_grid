@@ -6,10 +6,9 @@
 [supermarket]: https://supermarket.chef.io/cookbooks/selenium_grid
 [travis]: https://travis-ci.org/dhoer/chef-selenium_grid
 
-Setup a selenium grid in minutes.  
-Create selenium hub, then add selenium nodes on Linux, Mac OS X and/or Windows platforms.  
-Set max instances greater than zero to install and/or configure Browsers and JavaScript engines.  
-Browsers and JavaScript engines will be ignored on operating systems that are not compatible. 
+Setup a selenium grid in minutes.  Create selenium hub, then add selenium nodes on Linux, Mac OS X and/or Windows 
+platforms.  Set max instances greater than zero to install and/or configure Browsers and JavaScript engines.  Browsers 
+and JavaScript engines will be ignored on operating systems that are not compatible. 
 
 Supported Browser and JavaScript engines:
 
