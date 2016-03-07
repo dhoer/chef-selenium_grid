@@ -37,7 +37,7 @@ if node['selenium_grid']['chrome']['max_instances'] > 0 && !(platform_family?('r
   }
 end
 
-if node['selenium_grid']['firefox']['max_instances'] > 0 && !platform?('debian')
+if node['selenium_grid']['firefox']['max_instances'] > 0
   node.set['mozilla_firefox']['32bit_only'] = true
   include_recipe 'mozilla_firefox'
   v_firefox = node['selenium_grid']['firefox']['version']
@@ -59,7 +59,7 @@ if node['selenium_grid']['htmlunit']['max_instances'] > 0
 end
 
 if node['selenium_grid']['ie']['max_instances'] > 0 && platform?('windows')
-  fail('Only one instance of ie allowed!') if node['selenium_grid']['ie']['max_instances'] > 1
+  raise('Only one instance of ie allowed!') if node['selenium_grid']['ie']['max_instances'] > 1
   include_recipe 'iedriver'
   v_ie = node['selenium_grid']['ie']['version']
   capabilities << {
