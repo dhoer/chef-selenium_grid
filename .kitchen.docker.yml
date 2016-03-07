@@ -62,7 +62,7 @@ platforms:
     run_command: /usr/lib/systemd/systemd
     provision_command:
       - /usr/bin/apt-get update
-      - /usr/bin/apt-get install apt-transport-https net-tools -y
+      - /usr/bin/apt-get initscripts net-tools wget -y
 
 suites:
 - name: default
