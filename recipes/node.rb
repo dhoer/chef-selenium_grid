@@ -83,6 +83,7 @@ if node['selenium_grid']['opera']['max_instances'] > 0 && platform?('ubuntu', 'w
 end
 
 if node['selenium_grid']['phantomjs']['max_instances'] > 0 && !platform?('mac_os_x', 'windows')
+  package 'bzip2' if platform?('rhel') && node['platform_version'].split('.')[0] == '7'
   node['selenium_grid']['phantomjs']['max_instances'].times do |i|
     ghostdriver "ghostdriver_node_#{i}" do
       webdriver "#{node['ipaddress']}:#{8910 + i}"
