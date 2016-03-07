@@ -5,11 +5,7 @@ if WINDOWS || (LINUX && `gcc --version` =~ /Ubuntu/)
   describe 'Opera Grid' do
     before(:all) do
       caps = Selenium::WebDriver::Remote::Capabilities.chrome
-      if WINDOWS
-        binary = 'C:\Program Files (x86)\Opera\launcher.exe'
-      else
-        binary = '/usr/bin/opera'
-      end
+      binary = WINDOWS ? 'C:\Program Files (x86)\Opera\launcher.exe' : '/usr/bin/opera'
       caps[:chromeOptions] = { binary: binary }
       caps[:browserName] = 'operablink'
       @selenium = Selenium::WebDriver.for(:remote, desired_capabilities: caps)
@@ -19,11 +15,7 @@ if WINDOWS || (LINUX && `gcc --version` =~ /Ubuntu/)
       @selenium.quit
     end
 
-    if MACOSX
-      res = '1024 x 768'
-    else
-      res = '1280 x 1024' # xvfb
-    end
+    res = MACOSX ? '1024 x 768' : '1280 x 1024'
 
     it "Should return display resolution of #{res}" do
       @selenium.get 'http://www.whatismyscreenresolution.com/'

@@ -9,11 +9,7 @@ describe 'Firefox Grid' do
     @selenium.quit
   end
 
-  if MACOSX
-    res = '1024 x 768'
-  else
-    res = '1280 x 1024' # xvfb
-  end
+  res = MACOSX ? '1024 x 768' : '1280 x 1024'
 
   it "Should return display resolution of #{res}" do
     @selenium.get 'http://www.whatismyscreenresolution.com/'
