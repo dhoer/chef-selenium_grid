@@ -26,7 +26,7 @@ platforms:
     run_command: /usr/lib/systemd/systemd
     provision_command:
       - /bin/yum update -y
-      - /bin/yum install -y initscripts net-tools wget
+      - /bin/yum install -y initscripts net-tools wget bzip2
 - name: ubuntu-14.04
   driver:
     image: ubuntu-upstart:14.04
