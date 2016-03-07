@@ -59,7 +59,7 @@ platforms:
     image: debian:8
     platform: debian
     disable_upstart: false
-    run_command: /sbin/init
+    run_command: /usr/lib/systemd/systemd
     provision_command:
       - /usr/bin/apt-get update
       - /usr/bin/apt-get install apt-transport-https net-tools -y
