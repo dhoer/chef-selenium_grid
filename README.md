@@ -28,8 +28,8 @@ Supported Browser and JavaScript engines:
 ### Platforms
 
 - CentOS, RedHat
+- Debian, Ubuntu
 - Mac OS X
-- Ubuntu
 - Windows
 
 ## Recipes
