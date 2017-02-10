@@ -23,7 +23,7 @@ Supported Browser and JavaScript engines:
 ## Requirements
 
 - Java (not installed by this cookbook)
-- Chef 11.16+ 
+- Chef 12.14+ 
 
 ### Platforms
 

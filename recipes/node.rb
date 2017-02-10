@@ -1,19 +1,8 @@
 username = platform?('windows', 'mac_os_x') ? node['selenium_grid']['username'] : nil
 password = platform?('windows', 'mac_os_x') ? node['selenium_grid']['password'] : nil
-domain = platform?('windows') ? node['selenium_grid']['domain'] : nil
 
 width = node['selenium_grid']['display']['width']
 height = node['selenium_grid']['display']['height']
-
-case node['platform_family']
-when 'debian'
-  # firefox runs at compile time and firefox package is not up to date on Ubuntu 14.04-1
-  execute 'sudo apt-get update' do
-    action :nothing
-  end.run_action(:run)
-when 'rhel'
-  include_recipe 'yum'
-end
 
 unless platform?('windows', 'mac_os_x')
   node.override['xvfb']['dimensions'] = "#{width}x#{height}x#{node['selenium_grid']['display']['depth']}"
@@ -111,7 +100,6 @@ unless capabilities.empty?
   node.set['selenium']['node']['capabilities'] = capabilities
   node.set['selenium']['node']['username'] = username
   node.set['selenium']['node']['password'] = password
-  node.set['selenium']['node']['domain'] = domain
 
   include_recipe 'selenium::node'
 end

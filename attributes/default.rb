@@ -1,6 +1,5 @@
 default['selenium_grid']['username'] = nil
 default['selenium_grid']['password'] = nil
-default['selenium_grid']['domain'] = nil
 
 default['selenium_grid']['display']['width'] = 1024
 default['selenium_grid']['display']['height'] = 768

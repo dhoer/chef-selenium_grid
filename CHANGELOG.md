@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0
+
+- Drop support for Chef 11
+
 ## 1.2.2
 
 - Support Firefox on Debian platform
