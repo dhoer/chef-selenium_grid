@@ -59,18 +59,6 @@ if node['selenium_grid']['ie']['max_instances'] > 0 && platform?('windows')
   }
 end
 
-if node['selenium_grid']['opera']['max_instances'] > 0 && platform?('ubuntu', 'windows')
-  include_recipe 'opera'
-  include_recipe 'operadriver'
-  v_opera = node['selenium_grid']['opera']['version']
-  capabilities << {
-    browserName: 'operablink',
-    maxInstances: node['selenium_grid']['opera']['max_instances'],
-    version: v_opera ? v_opera : opera_version,
-    seleniumProtocol: 'WebDriver'
-  }
-end
-
 if node['selenium_grid']['phantomjs']['max_instances'] > 0 && !platform?('mac_os_x', 'windows')
   node['selenium_grid']['phantomjs']['max_instances'].times do |i|
     ghostdriver "ghostdriver_node_#{i}" do

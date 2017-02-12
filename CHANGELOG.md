@@ -3,6 +3,7 @@
 ## 2.0.0
 
 - Drop support for Chef 11
+- Drop support for Opera
 
 ## 1.2.2
 

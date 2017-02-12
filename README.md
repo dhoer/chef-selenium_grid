@@ -16,7 +16,6 @@ Supported Browser and JavaScript engines:
 - Firefox
 - HtmlUnit
 - Internet Explorer
-- Opera
 - PhantomJS
 - Safari
 
@@ -63,11 +62,6 @@ attributes (if any) for more information about configuring them as well.
 [IE](https://github.com/dhoer/chef-ie#ie-cookbook), if > 0. Only one instance
 of IE is recommended. Windows only. Default `0`.
 - `node['selenium_grid']['ie']['version']` - Version of browser installed, if nil. Default `nil`.
-- `node['selenium_grid']['opera']['max_instances']` - Installs 
-[Opera](https://github.com/dhoer/chef-opera#attributes) and 
-[OperaDriver](https://github.com/dhoer/chef-operadriver#attributes), if > 0. Ubuntu 
-and Windows only. Default `0`.
-- `node['selenium_grid']['opera']['version']` - Version of browser installed, if nil. Default `nil`.
 - `node['selenium_grid']['phantomjs']['max_instances']` - Installs 
 [GhostDriver](https://github.com/dhoer/chef-ghostdriver) and 
 [PhantomJS](https://github.com/customink-webops/phantomjs#attributes), and 
