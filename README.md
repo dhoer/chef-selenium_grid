@@ -17,7 +17,6 @@ Supported Browser and JavaScript engines:
 - HtmlUnit
 - Internet Explorer
 - PhantomJS
-- Safari
 
 ## Requirements
 
@@ -28,7 +27,6 @@ Supported Browser and JavaScript engines:
 
 - CentOS, RedHat
 - Debian, Ubuntu
-- Mac OS X
 - Windows
 
 ## Recipes
@@ -41,7 +39,7 @@ recipe attributes for more information about configuring the hub.
 
 ## node
 
-Installs and configures a Selenium Node as service on Linux and a GUI service on Mac OS X and Windows. See selenium
+Installs and configures a Selenium Node as service on Linux and a GUI service on Windows. See selenium
 [node](https://github.com/dhoer/chef-selenium#attributes-2) recipe attributes for more information about configuring 
 the node. The following attributes are in addition to the node attributes. See associated browsers and drivers cookbook 
 attributes (if any) for more information about configuring them as well.
@@ -66,15 +64,11 @@ of IE is recommended. Windows only. Default `0`.
 [GhostDriver](https://github.com/dhoer/chef-ghostdriver) and 
 [PhantomJS](https://github.com/customink-webops/phantomjs#attributes), and 
 creates a separate Node service for each instance, if > 0. Linux only. Default `0`.
-- `node['selenium_grid']['safari']['max_instances']` - Installs 
-[SafariDriver](https://github.com/dhoer/chef-safaridriver#attributes) via 
-[Safari](https://github.com/dhoer/chef-safari#safari-cookbook), if > 0. Mac OS X only. Default `0`.
-- `node['selenium_grid']['safari']['version']` - Version of browser installed, if nil. Default `nil`.
 
 ##### Account
 
-- `node['selenium_grid']['username']` - Mac OS X and Windows. Default `nil`.
-- `node['selenium_grid']['password']` - Mac OS X and Windows. Default `nil`.
+- `node['selenium_grid']['username']` - Windows only. Default `nil`.
+- `node['selenium_grid']['password']` - Windows only. Default `nil`.
 - `node['selenium_grid']['domain']` - Windows only. Default `nil`.
 
 ##### Display

@@ -4,6 +4,7 @@
 
 - Drop support for Chef 11
 - Drop support for Opera
+- Drop support for Mac OS X
 
 ## 1.2.2
 

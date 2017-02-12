@@ -51,5 +51,3 @@ suites:
           max_instances: 1
         phantomjs:
           max_instances: 5
-        safari:
-          max_instances: 1

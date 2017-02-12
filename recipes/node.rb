@@ -72,19 +72,6 @@ if node['selenium_grid']['phantomjs']['max_instances'] > 0 && !platform?('mac_os
   end
 end
 
-if node['selenium_grid']['safari']['max_instances'] > 0 && platform?('mac_os_x')
-  node.override['safaridriver']['username'] = username
-  node.override['safaridriver']['password'] = password
-  include_recipe 'safaridriver'
-  v_safari = node['selenium_grid']['safari']['version']
-  capabilities << {
-    browserName: 'safari',
-    maxInstances: node['selenium_grid']['safari']['max_instances'],
-    version: v_safari ? v_safari : safari_version,
-    seleniumProtocol: 'WebDriver'
-  }
-end
-
 unless capabilities.empty?
   node.override['selenium']['node']['capabilities'] = capabilities
   node.override['selenium']['node']['username'] = username

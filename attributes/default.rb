@@ -15,5 +15,3 @@ default['selenium_grid']['htmlunit']['version'] = nil
 default['selenium_grid']['ie']['max_instances'] = 0
 default['selenium_grid']['ie']['version'] = nil
 default['selenium_grid']['phantomjs']['max_instances'] = 0
-default['selenium_grid']['safari']['max_instances'] = 0
-default['selenium_grid']['safari']['version'] = nil
