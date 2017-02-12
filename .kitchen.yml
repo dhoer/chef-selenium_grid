@@ -49,8 +49,6 @@ suites:
           max_instances: 1
         ie:
           max_instances: 1
-        opera:
-          max_instances: 5
         phantomjs:
           max_instances: 5
         safari:

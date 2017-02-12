@@ -6,6 +6,7 @@ height = node['selenium_grid']['display']['height']
 
 unless platform?('windows', 'mac_os_x')
   node.override['xvfb']['dimensions'] = "#{width}x#{height}x#{node['selenium_grid']['display']['depth']}"
+  node.override['xvfb']['args'] = '-ac'
 
   include_recipe 'xvfb'
 end
@@ -27,7 +28,7 @@ if node['selenium_grid']['chrome']['max_instances'] > 0 && !(platform_family?('r
 end
 
 if node['selenium_grid']['firefox']['max_instances'] > 0
-  node.set['mozilla_firefox']['32bit_only'] = true
+  node.override['mozilla_firefox']['32bit_only'] = true
   include_recipe 'mozilla_firefox'
   v_firefox = node['selenium_grid']['firefox']['version']
   capabilities << {
@@ -72,8 +73,8 @@ if node['selenium_grid']['phantomjs']['max_instances'] > 0 && !platform?('mac_os
 end
 
 if node['selenium_grid']['safari']['max_instances'] > 0 && platform?('mac_os_x')
-  node.set['safaridriver']['username'] = username
-  node.set['safaridriver']['password'] = password
+  node.override['safaridriver']['username'] = username
+  node.override['safaridriver']['password'] = password
   include_recipe 'safaridriver'
   v_safari = node['selenium_grid']['safari']['version']
   capabilities << {
@@ -85,20 +86,19 @@ if node['selenium_grid']['safari']['max_instances'] > 0 && platform?('mac_os_x')
 end
 
 unless capabilities.empty?
-  node.set['selenium']['node']['capabilities'] = capabilities
-  node.set['selenium']['node']['username'] = username
-  node.set['selenium']['node']['password'] = password
+  node.override['selenium']['node']['capabilities'] = capabilities
+  node.override['selenium']['node']['username'] = username
+  node.override['selenium']['node']['password'] = password
 
   include_recipe 'selenium::node'
 end
 
 # Call windows_display after selenium_node because windows_display will
 # override auto-login created by selenium_node.
-if node['selenium_grid']['display']['windows'] && platform?('windows')
-  node.set['windows_screenresolution']['username'] = username
-  node.set['windows_screenresolution']['password'] = password
-  node.set['windows_screenresolution']['width'] = width
-  node.set['windows_screenresolution']['height'] = height
-
-  include_recipe 'windows_screenresolution'
+if node['selenium_grid']['display']['windows'] && platform?('windows') # ~FC023
+  windows_screenresolution username do
+    password password
+    width width
+    height height
+  end
 end
