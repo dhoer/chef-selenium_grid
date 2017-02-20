@@ -1,10 +1,13 @@
 # Selenium-Grid Cookbook
 
-[![Cookbook Version](http://img.shields.io/cookbook/v/selenium_grid.svg?style=flat-square)][supermarket]
-[![Build Status](http://img.shields.io/travis/dhoer/chef-selenium_grid.svg?style=flat-square)][travis]
+[![Cookbook Version](http://img.shields.io/cookbook/v/selenium_grid.svg?style=flat-square)][cookbook]
+[![linux](http://img.shields.io/travis/dhoer/chef-selenium_grid/master.svg?label=linux&style=flat-square)][linux]
+[![win](https://img.shields.io/appveyor/ci/dhoer/chef-selenium_grid/master.svg?label=windows&style=flat-square)][win]
 
-[supermarket]: https://supermarket.chef.io/cookbooks/selenium_grid
-[travis]: https://travis-ci.org/dhoer/chef-selenium_grid
+[cookbook]: https://supermarket.chef.io/cookbooks/selenium_grid
+[linux]: https://travis-ci.org/dhoer/chef-selenium_grid/branches
+[win]: https://ci.appveyor.com/project/dhoer/chef-selenium-grid
+
 
 Setup a selenium grid in minutes.  Create selenium hub, then add selenium nodes on Linux, Mac OS X and/or Windows 
 platforms.  Set max instances greater than zero to install and/or configure Browsers and JavaScript engines.  Browsers 
