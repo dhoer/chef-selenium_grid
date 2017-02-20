@@ -71,13 +71,9 @@ end
 # Call windows_display after selenium_node because windows_display will
 # override auto-login created by selenium_node.
 if node['selenium_grid']['display']['windows'] && platform?('windows') # ~FC023
-  rdp_password = node['windows_screenresolution']['rdp_password']
-  rdp_password = password unless rdp_password
-
   windows_screenresolution username do
     password password
     width width
     height height
-    rdp_password rdp_password
   end
 end
