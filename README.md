@@ -16,7 +16,6 @@ Supported Browser and JavaScript engines:
 - Firefox
 - HtmlUnit
 - Internet Explorer
-- PhantomJS
 
 ## Requirements
 
@@ -60,10 +59,6 @@ attributes (if any) for more information about configuring them as well.
 [IE](https://github.com/dhoer/chef-ie#ie-cookbook), if > 0. Only one instance
 of IE is recommended. Windows only. Default `0`.
 - `node['selenium_grid']['ie']['version']` - Version of browser installed, if nil. Default `nil`.
-- `node['selenium_grid']['phantomjs']['max_instances']` - Installs 
-[GhostDriver](https://github.com/dhoer/chef-ghostdriver) and 
-[PhantomJS](https://github.com/customink-webops/phantomjs#attributes), and 
-creates a separate Node service for each instance, if > 0. Linux only. Default `0`.
 
 ##### Account
 

@@ -60,18 +60,6 @@ if node['selenium_grid']['ie']['max_instances'] > 0 && platform?('windows')
   }
 end
 
-if node['selenium_grid']['phantomjs']['max_instances'] > 0 && !platform?('mac_os_x', 'windows')
-  node['selenium_grid']['phantomjs']['max_instances'].times do |i|
-    ghostdriver "ghostdriver_node_#{i}" do
-      webdriver "#{node['ipaddress']}:#{8910 + i}"
-      host = node['selenium']['node']['hubHost'] == 'ip' ? node['ipaddress'] : node['selenium']['node']['hubHost']
-      port = node['selenium']['node']['hubPort']
-      webdriverSeleniumGridHub "http://#{host}:#{port}"
-      action :install
-    end
-  end
-end
-
 unless capabilities.empty?
   node.override['selenium']['node']['capabilities'] = capabilities
   node.override['selenium']['node']['username'] = username
