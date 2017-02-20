@@ -12,7 +12,6 @@ chef_version '>= 12.14'
 
 supports 'centos'
 supports 'debian'
-supports 'fedora'
 supports 'redhat'
 supports 'ubuntu'
 supports 'windows'
