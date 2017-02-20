@@ -2,7 +2,7 @@
 
 [![Cookbook Version](http://img.shields.io/cookbook/v/selenium_grid.svg?style=flat-square)][cookbook]
 [![linux](http://img.shields.io/travis/dhoer/chef-selenium_grid/master.svg?label=linux&style=flat-square)][linux]
-[![win](https://img.shields.io/appveyor/ci/dhoer/chef-selenium_grid/master.svg?label=windows&style=flat-square)][win]
+[![win](https://img.shields.io/appveyor/ci/dhoer/chef-selenium-grid/master.svg?label=windows&style=flat-square)][win]
 
 [cookbook]: https://supermarket.chef.io/cookbooks/selenium_grid
 [linux]: https://travis-ci.org/dhoer/chef-selenium_grid/branches
