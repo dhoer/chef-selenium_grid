@@ -28,8 +28,8 @@ if node['selenium_grid']['chrome']['max_instances'] > 0 && !(platform_family?('r
 end
 
 if node['selenium_grid']['firefox']['max_instances'] > 0
-  node.override['mozilla_firefox']['32bit_only'] = true
   include_recipe 'mozilla_firefox'
+  include_recipe 'geckodriver'
   v_firefox = node['selenium_grid']['firefox']['version']
   capabilities << {
     browserName: 'firefox',
