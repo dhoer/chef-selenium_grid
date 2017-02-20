@@ -78,6 +78,6 @@ if node['selenium_grid']['display']['windows'] && platform?('windows') # ~FC023
     password password
     width width
     height height
-    rdp_password
+    rdp_password rdp_password
   end
 end
